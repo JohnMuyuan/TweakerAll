@@ -14,11 +14,9 @@
 
 ## What is this?
 
-TweakerAll is an **independent, all-in-one** client-side utility mod for Minecraft (Fabric), developed and maintained by **JohnMuyuan** as a personal hobby project.
-
-It packs the hundreds of client tweaks the author actually plays with — view & movement fixes, inventory and container helpers, rendering adjustments, quick actions and all kinds of QoL features — into a **single mod**, driven by **one unified configuration screen**. Everything is organized into Generic / Fixes / Lists / Tweaks / Hotkeys / Disables categories, opened with `X + C` by default.
-
-The project exists purely as a hobby: the author didn't want to juggle a pile of small single-purpose mods, so a lot of care went into merging them, fixing compatibility issues and polishing the result into one coherent whole — then open-sourcing it for anyone with the same needs. **It is not part of, and does not depend on, any other mod or team.**
+TweakerAll is a standalone Minecraft client feature integration mod (Fabric) developed and maintained by JohnMuyuan.
+It combines the three tweaker clients the author uses daily into a single mod and provides a unified configuration interface: all features can be managed from a single interface, which opens by default with X + C.
+It is not affiliated with, nor does it depend on, any other mods or teams.
 
 ## Features
 
