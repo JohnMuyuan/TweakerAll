@@ -1,0 +1,8 @@
+accessWidener v2 official
+accessible class net/minecraft/client/gui/GuiGraphicsExtractor$ScissorStack
+accessible class net/minecraft/client/gui/components/ChatComponent$LineConsumer
+accessible class net/minecraft/client/gui/Gui$ContextualInfo
+accessible class net/minecraft/client/OptionInstance$ValueSet
+accessible class net/minecraft/client/OptionInstance$SliderableValueSet
+accessible field net/minecraft/world/level/block/Block builtInRegistryHolder Lnet/minecraft/core/Holder$Reference;
+accessible method net/minecraft/client/gui/components/MultiLineEditBox <init> (Lnet/minecraft/client/gui/Font;IIIILnet/minecraft/network/chat/Component;Lnet/minecraft/network/chat/Component;IZIZZ)V

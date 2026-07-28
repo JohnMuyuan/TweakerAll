@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.tweakerall.mixin",
+  "client": [
+    "ConfigScreenRegistryMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

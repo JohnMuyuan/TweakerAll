@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "id": "tweakerall",
+  "version": "${version}",
+  "name": "TweakerAll",
+  "description": "An all-in-one client-side tweak mod: hundreds of configurable tweaks, fixes, lists and hotkeys under one unified configuration screen. Free and open source. Do NOT install together with Tweakeroo, TweakerMore or Eclipse's Tweakeroo Additions.",
+  "authors": [
+    "JohnMuyuan"
+  ],
+  "contributors": [
+    "masa (Tweakeroo)",
+    "Sakura-Ryoko (Tweakeroo fork)",
+    "Fallen_Breath (TweakerMore)",
+    "eclipseisoffline (Eclipse's Tweakeroo Additions)"
+  ],
+  "license": "LGPL-3.0-only",
+  "icon": "assets/tweakerall/icon.png",
+  "contact": {
+    "homepage": "https://muyno.com",
+    "sources": "https://github.com/JohnMuyuan/TweakerAll",
+    "issues": "https://github.com/JohnMuyuan/TweakerAll/issues"
+  },
+  "custom": {
+    "modmenu": {
+      "links": {
+        "tweakerall.link.repo": "https://github.com/JohnMuyuan/TweakerAll",
+        "tweakerall.link.tweakeroo": "https://github.com/maruohon/tweakeroo",
+        "tweakerall.link.tweakermore": "https://github.com/Fallen-Breath/tweakermore",
+        "tweakerall.link.eclipsestweakeroo": "https://github.com/eclipseisoffline/eclipsestweakeroo"
+      }
+    }
+  },
+  "environment": "client",
+  "entrypoints": {
+    "preLaunch": [
+      "me.fallenbreath.tweakermore.util.bootstrap.TweakerMorePreLaunchEntrypoint"
+    ],
+    "main": [
+      "fi.dy.masa.tweakeroo.Tweakeroo",
+      "xyz.eclipseisoffline.eclipsestweakeroo.EclipsesTweakeroo"
+    ],
+    "client": [
+      "me.fallenbreath.tweakermore.TweakerMoreMod",
+      "xyz.eclipseisoffline.eclipsestweakeroo.client.EclipsesTweakerooClient",
+      "dev.tweakerall.client.TweakerAllClient"
+    ],
+    "modmenu": [
+      "dev.tweakerall.client.TweakerAllModMenu"
+    ]
+  },
+  "mixins": [
+    {
+      "config": "tweakerall.mixins.json",
+      "environment": "client"
+    },
+    "mixins.tweakeroo.json",
+    "tweakermore.mixins.json",
+    {
+      "config": "eclipsestweakeroo.client.mixin.json",
+      "environment": "client"
+    }
+  ],
+  "accessWidener": "tweakerall.accesswidener",
+  "depends": {
+    "fabricloader": ">=0.19.3",
+    "fabric-api": "*",
+    "minecraft": "=26.1.2",
+    "malilib": ">=0.28.8- <0.29.0-"
+  },
+  "breaks": {
+    "tweakeroo": "*",
+    "tweakermore": "*",
+    "eclipsestweakeroo": "*"
+  },
+  "jars": [
+    { "file": "META-INF/jars/conditional-mixin-fabric-0.6.4.jar" },
+    { "file": "META-INF/jars/fabric-api-base-2.0.3+ece0632339.jar" },
+    { "file": "META-INF/jars/fabric-command-api-v2-3.0.5+e2bdee7839.jar" }
+  ]
+}

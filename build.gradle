@@ -1,0 +1,103 @@
+plugins {
+    id 'net.fabricmc.fabric-loom' version '1.17-SNAPSHOT'
+}
+
+version = project.mod_version
+group = 'dev.tweakerall'
+
+base {
+    archivesName = 'tweakerall-fabric-26.1.2'
+}
+
+repositories {
+    maven { url = 'https://masa.dy.fi/maven/sakura-ryoko' }
+    maven { url = 'https://maven.terraformersmc.com/releases/' }
+}
+
+def upstreamJars = [
+        file('libs/tweakeroo-0.28.6+26.1.2.jar'),
+        file('libs/tweakermore-3.31.0-beta.1+26.1.2.jar'),
+        file('libs/eclipsestweakeroo-0.7.5+26.1.2.jar')
+]
+
+dependencies {
+    minecraft 'com.mojang:minecraft:26.1.2'
+    implementation 'net.fabricmc:fabric-loader:0.19.3'
+    implementation('fi.dy.masa.malilib:malilib-fabric-26.1.2:0.28.8') { transitive = false }
+    compileOnly('com.terraformersmc:modmenu:18.0.0') { transitive = false }
+    compileOnly files(upstreamJars)
+}
+
+loom {
+    accessWidenerPath = file('src/main/resources/tweakerall.accesswidener')
+}
+
+processResources {
+    inputs.property 'version', project.version
+    filesMatching('fabric.mod.json') {
+        expand version: project.version
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release = 25
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_25
+    targetCompatibility = JavaVersion.VERSION_25
+    withSourcesJar()
+}
+
+tasks.named('jar', Jar) {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    upstreamJars.each { upstream ->
+        from(zipTree(upstream)) {
+            exclude 'fabric.mod.json', 'META-INF/MANIFEST.MF',
+                    'tweakeroo.accesswidener', 'tweakermore.accesswidener', 'eclipsestweakeroo.accesswidener'
+        }
+    }
+    from('LICENSE') { rename { 'LICENSE_TweakerAll' } }
+    from('COPYING') { rename { 'COPYING_GPL3' } }
+    from('NOTICE.md') { rename { 'NOTICE_TweakerAll.md' } }
+}
+
+def verifyDistribution = tasks.register('verifyDistribution') {
+    dependsOn tasks.named('jar')
+    inputs.file(tasks.named('jar').flatMap { it.archiveFile })
+    doLast {
+        new java.util.zip.ZipFile(tasks.named('jar').get().archiveFile.get().asFile).withCloseable { jar ->
+            [
+                    'fabric.mod.json',
+                    'assets/tweakerall/icon.png',
+                    'tweakerall.mixins.json',
+                    'tweakerall.accesswidener',
+                    'LICENSE_TweakerAll',
+                    'COPYING_GPL3',
+                    'NOTICE_TweakerAll.md',
+                    'LICENSE_tweakermore',
+                    'LICENSE_eclipsestweakeroo',
+                    'dev/tweakerall/client/TweakerAllConfigScreen.class',
+                    'dev/tweakerall/mixin/ConfigScreenRegistryMixin.class',
+                    'fi/dy/masa/tweakeroo/mixin/render/MixinIrisHandRenderer_ViewBob.class',
+                    'me/fallenbreath/tweakermore/mixins/tweaks/mc_tweaks/clientEntityTargetingSelectAll/LocalPlayerMixin.class',
+                    'fi/dy/masa/tweakeroo/Tweakeroo.class',
+                    'me/fallenbreath/tweakermore/TweakerMoreMod.class',
+                    'xyz/eclipseisoffline/eclipsestweakeroo/EclipsesTweakeroo.class',
+                    'mixins.tweakeroo.json',
+                    'tweakermore.mixins.json',
+                    'eclipsestweakeroo.client.mixin.json'
+            ].each {
+                if (jar.getEntry(it) == null) throw new GradleException("Missing merged distribution entry: $it")
+            }
+            if (jar.getEntry('META-INF/jars/tweakeroo-0.28.6+26.1.2.jar') != null) {
+                throw new GradleException('Upstream mods must be merged, not nested')
+            }
+        }
+    }
+}
+
+tasks.named('check') {
+    dependsOn verifyDistribution
+}

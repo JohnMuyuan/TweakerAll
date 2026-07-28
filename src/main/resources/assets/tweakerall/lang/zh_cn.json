@@ -1,0 +1,15 @@
+{
+  "tweakerall.gui.title": "TweakerAll 配置 - %s",
+  "tweakerall.gui.free_notice": "该模组已免费开源，不收费！作者主页及联系方式：YP.MK",
+  "tweakerall.gui.tab.all": "全部",
+  "tweakerall.gui.tab.generic": "通用",
+  "tweakerall.gui.tab.fixes": "修复",
+  "tweakerall.gui.tab.lists": "列表",
+  "tweakerall.gui.tab.tweaks": "功能",
+  "tweakerall.gui.tab.hotkeys": "热键",
+  "tweakerall.gui.tab.disables": "禁用项",
+  "tweakerall.link.repo": "TweakerAll 源码（GitHub）",
+  "tweakerall.link.tweakeroo": "Tweakeroo GitHub 仓库",
+  "tweakerall.link.tweakermore": "TweakerMore GitHub 仓库",
+  "tweakerall.link.eclipsestweakeroo": "Eclipse's Tweakeroo Additions GitHub 仓库"
+}

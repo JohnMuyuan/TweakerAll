@@ -1,0 +1,15 @@
+{
+  "tweakerall.gui.title": "TweakerAll Configuration - %s",
+  "tweakerall.gui.free_notice": "This mod is free and open source — never pay for it! Author: YP.MK",
+  "tweakerall.gui.tab.all": "All",
+  "tweakerall.gui.tab.generic": "Generic",
+  "tweakerall.gui.tab.fixes": "Fixes",
+  "tweakerall.gui.tab.lists": "Lists",
+  "tweakerall.gui.tab.tweaks": "Tweaks",
+  "tweakerall.gui.tab.hotkeys": "Hotkeys",
+  "tweakerall.gui.tab.disables": "Disables",
+  "tweakerall.link.repo": "TweakerAll source code (GitHub)",
+  "tweakerall.link.tweakeroo": "Tweakeroo GitHub",
+  "tweakerall.link.tweakermore": "TweakerMore GitHub",
+  "tweakerall.link.eclipsestweakeroo": "Eclipse's Tweakeroo Additions GitHub"
+}

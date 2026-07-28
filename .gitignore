@@ -1,0 +1,46 @@
+# Gradle / Fabric Loom
+.gradle/
+build/
+out/
+run/
+remappedSrc/
+.loom-cache/
+bin/
+*.class
+
+# IDE - IntelliJ
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# IDE - Eclipse
+.classpath
+.project
+.settings/
+
+# IDE - VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs / crash dumps
+logs/
+crash-reports/
+*.log
+hs_err_pid*
+replay_pid*
+
+# Local tooling scratch
+.agents/
+
+# Local-only gradle overrides
+gradle-local.properties
+local.properties
+
+# NOTE: libs/ is intentionally NOT ignored — the upstream jars are required
+# to build this project and are committed to the repository.
+# NOTE: gradle wrapper files (gradlew, gradlew.bat, gradle/wrapper/) must be committed.
