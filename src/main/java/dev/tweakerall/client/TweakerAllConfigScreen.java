@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import dev.tweakerall.config.TweakerAllConfigs;
 import fi.dy.masa.malilib.config.IConfigBase;
 import fi.dy.masa.malilib.config.options.BooleanHotkeyGuiWrapper;
 import fi.dy.masa.malilib.gui.GuiConfigsBase;
@@ -36,7 +37,7 @@ public final class TweakerAllConfigScreen extends GuiConfigsBase {
     private static Tab tab = Tab.TWEAKS;
 
     public TweakerAllConfigScreen(Screen parent) {
-        super(10, 50, "tweakerall", parent, "tweakerall.gui.title", "1.0.6");
+        super(10, 50, "tweakerall", parent, "tweakerall.gui.title", "1.0.8");
         setParent(parent);
     }
 
@@ -100,6 +101,9 @@ public final class TweakerAllConfigScreen extends GuiConfigsBase {
         List<ConfigOptionWrapper> result = new ArrayList<>();
         if (category == Tab.HOTKEYS) {
             addSection(result, "TweakerAll", ConfigOptionWrapper.createFor(List.of(Hotkeys.OPEN_CONFIG_GUI)));
+        }
+        if (category == Tab.DISABLES) {
+            addSection(result, "TweakerAll", ConfigOptionWrapper.createFor(TweakerAllConfigs.DISABLE_OPTIONS));
         }
         addSection(result, "Tweakeroo", tweakerooConfigs(category));
         addSection(result, "TweakerMore", tweakerMoreConfigs(category));

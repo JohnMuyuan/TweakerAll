@@ -11,5 +11,7 @@
   "tweakerall.link.repo": "TweakerAll 源码（GitHub）",
   "tweakerall.link.tweakeroo": "Tweakeroo GitHub 仓库",
   "tweakerall.link.tweakermore": "TweakerMore GitHub 仓库",
-  "tweakerall.link.eclipsestweakeroo": "Eclipse's Tweakeroo Additions GitHub 仓库"
+  "tweakerall.link.eclipsestweakeroo": "Eclipse's Tweakeroo Additions GitHub 仓库",
+  "tweakerall.config.disableSpeedFovEffect.name": "禁用 - 速度视野变化",
+  "tweakerall.config.disableSpeedFovEffect.comment": "阻止疾跑、速度药水及其他移动速度变化改变画面视野（FOV）。"
 }

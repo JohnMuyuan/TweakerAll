@@ -11,5 +11,7 @@
   "tweakerall.link.repo": "TweakerAll source code (GitHub)",
   "tweakerall.link.tweakeroo": "Tweakeroo GitHub",
   "tweakerall.link.tweakermore": "TweakerMore GitHub",
-  "tweakerall.link.eclipsestweakeroo": "Eclipse's Tweakeroo Additions GitHub"
+  "tweakerall.link.eclipsestweakeroo": "Eclipse's Tweakeroo Additions GitHub",
+  "tweakerall.config.disableSpeedFovEffect.name": "Disable - Speed FOV Effect",
+  "tweakerall.config.disableSpeedFovEffect.comment": "Prevents sprinting and movement-speed changes, including Speed potions, from changing the camera field of view."
 }

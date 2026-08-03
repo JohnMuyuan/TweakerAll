@@ -24,7 +24,7 @@ It is not affiliated with, nor does it depend on, any other mods or teams.
 - **Tweaks**: flexible/free placement, fast placement, angel-block placement, free camera mode, creative-mode scaffolding, auto restock, fast right click, accurate placement and many more — each toggleable and configurable on its own;
 - **Fixes**: assorted vanilla annoyance fixes;
 - **Lists**: configurable item blacklists/whitelists, entity filters, etc.;
-- **Disables**: turn off unwanted vanilla behaviors (certain particles, hoes tilling soil, hand bobbing, ...);
+- **Disables**: turn off unwanted vanilla behaviors (certain particles, hoes tilling soil, hand bobbing, sprint/Speed-potion FOV changes, ...);
 - **Hotkeys**: every function's keybind is fully remappable;
 - Ships with a **Sodium/Iris rendering compatibility fix** and a "disable hand bobbing" patch built in, so it coexists with mainstream rendering mods out of the box.
 

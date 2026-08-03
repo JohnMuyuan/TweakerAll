@@ -79,6 +79,8 @@ def verifyDistribution = tasks.register('verifyDistribution') {
                     'LICENSE_tweakermore',
                     'LICENSE_eclipsestweakeroo',
                     'dev/tweakerall/client/TweakerAllConfigScreen.class',
+                    'dev/tweakerall/config/TweakerAllConfigs.class',
+                    'dev/tweakerall/mixin/AbstractClientPlayerMixin.class',
                     'dev/tweakerall/mixin/ConfigScreenRegistryMixin.class',
                     'fi/dy/masa/tweakeroo/mixin/render/MixinIrisHandRenderer_ViewBob.class',
                     'me/fallenbreath/tweakermore/mixins/tweaks/mc_tweaks/clientEntityTargetingSelectAll/LocalPlayerMixin.class',
@@ -93,6 +95,16 @@ def verifyDistribution = tasks.register('verifyDistribution') {
             }
             if (jar.getEntry('META-INF/jars/tweakeroo-0.28.6+26.1.2.jar') != null) {
                 throw new GradleException('Upstream mods must be merged, not nested')
+            }
+            def metadata = new groovy.json.JsonSlurper().parse(jar.getInputStream(jar.getEntry('fabric.mod.json')))
+            ['tweakeroo', 'tweakermore', 'eclipsestweakeroo'].each { upstreamId ->
+                if (!(upstreamId in (metadata.provides ?: []))) {
+                    throw new GradleException("Merged upstream id must be provided: $upstreamId")
+                }
+            }
+            def selfBreaks = (metadata.provides ?: []).findAll { it in (metadata.breaks?.keySet() ?: []) }
+            if (!selfBreaks.isEmpty()) {
+                throw new GradleException("Provided ids must not break their own container: $selfBreaks")
             }
         }
     }

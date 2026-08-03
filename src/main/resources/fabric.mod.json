@@ -1,6 +1,11 @@
 {
   "schemaVersion": 1,
   "id": "tweakerall",
+  "provides": [
+    "tweakeroo",
+    "tweakermore",
+    "eclipsestweakeroo"
+  ],
   "version": "${version}",
   "name": "TweakerAll",
   "description": "An all-in-one client-side tweak mod: hundreds of configurable tweaks, fixes, lists and hotkeys under one unified configuration screen. Free and open source. Do NOT install together with Tweakeroo, TweakerMore or Eclipse's Tweakeroo Additions.",
@@ -66,11 +71,6 @@
     "fabric-api": "*",
     "minecraft": "=26.1.2",
     "malilib": ">=0.28.8- <0.29.0-"
-  },
-  "breaks": {
-    "tweakeroo": "*",
-    "tweakermore": "*",
-    "eclipsestweakeroo": "*"
   },
   "jars": [
     { "file": "META-INF/jars/conditional-mixin-fabric-0.6.4.jar" },

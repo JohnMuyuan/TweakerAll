@@ -5,6 +5,8 @@
  */
 package dev.tweakerall.client;
 
+import dev.tweakerall.config.TweakerAllConfigs;
+import fi.dy.masa.malilib.config.ConfigManager;
 import fi.dy.masa.malilib.event.InitializationHandler;
 import fi.dy.masa.malilib.registry.Registry;
 import fi.dy.masa.malilib.util.data.ModInfo;
@@ -17,6 +19,7 @@ import xyz.eclipseisoffline.eclipsestweakeroo.client.config.EclipsesHotkeys;
 public final class TweakerAllClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
+        ConfigManager.getInstance().registerConfigHandler("tweakerall", new TweakerAllConfigs());
         Registry.CONFIG_SCREEN.registerConfigScreenFactory(
                 new ModInfo("tweakerall", "TweakerAll", () -> new TweakerAllConfigScreen(null)));
         InitializationHandler.getInstance().registerInitializationHandler(TweakerAllClient::configureConfigHotkeys);
