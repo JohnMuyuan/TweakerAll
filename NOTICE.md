@@ -10,14 +10,14 @@ merging the published compiled jars of the following LGPL-3.0 mods (placed in
 libs/ at build time), then adding its own unified metadata, entrypoint wiring
 and a shared configuration screen:
 
-- Tweakeroo 0.28.6+handviewbob.2 for Minecraft 26.1.2 — masa and Sakura-Ryoko
+- Tweakeroo 0.30.1+handviewbob.2 for Minecraft 26.3 — masa and Sakura-Ryoko
   https://github.com/maruohon/tweakeroo — https://github.com/Sakura-Ryoko/tweakeroo
   (locally built from the Sakura-Ryoko fork with a Sodium/Iris compatibility
   and hand-bobbing patch applied; the upstream tweakeroo jar itself ships no
   license file)
-- TweakerMore 3.31.0-beta.1 for Minecraft 26.1.2 — Fallen_Breath
+- TweakerMore 3.33.3-beta.1 for Minecraft 26.3 — Fallen_Breath
   https://github.com/Fallen-Breath/tweakermore
-- Eclipse's Tweakeroo Additions 0.7.5 for Minecraft 26.1.2 — eclipseisoffline
+- Eclipse's Tweakeroo Additions 0.7.7 for Minecraft 26.3 — eclipseisoffline
   https://github.com/eclipseisoffline/eclipsestweakeroo
 
 The jars in libs/ are unmodified upstream builds (except for the patched

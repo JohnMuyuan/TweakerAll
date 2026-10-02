@@ -8,7 +8,7 @@ import me.fallenbreath.tweakermore.util.mixin.DummyClass;
 import org.spongepowered.asm.mixin.Mixin;
 
 /**
- * The 26.1.2 implementation moved to MinecraftClient_pickEntityMixin.
+ * The implementation moved to MinecraftClient_pickEntityMixin.
  * Keeping the old LocalPlayer injection causes ambiguous @Local capture.
  */
 @Mixin(DummyClass.class)

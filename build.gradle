@@ -1,12 +1,12 @@
 plugins {
-    id 'net.fabricmc.fabric-loom' version '1.17-SNAPSHOT'
+    id 'net.fabricmc.fabric-loom' version '1.18.2'
 }
 
 version = project.mod_version
 group = 'dev.tweakerall'
 
 base {
-    archivesName = 'tweakerall-fabric-26.1.2'
+    archivesName = 'tweakerall-fabric-26.3'
 }
 
 repositories {
@@ -15,16 +15,16 @@ repositories {
 }
 
 def upstreamJars = [
-        file('libs/tweakeroo-0.28.6+26.1.2.jar'),
-        file('libs/tweakermore-3.31.0-beta.1+26.1.2.jar'),
-        file('libs/eclipsestweakeroo-0.7.5+26.1.2.jar')
+        file('libs/tweakeroo-0.30.1+26.3.jar'),
+        file('libs/tweakermore-3.33.3-beta.1+26.3.jar'),
+        file('libs/eclipsestweakeroo-0.7.7+26.3.jar')
 ]
 
 dependencies {
-    minecraft 'com.mojang:minecraft:26.1.2'
-    implementation 'net.fabricmc:fabric-loader:0.19.3'
-    implementation('fi.dy.masa.malilib:malilib-fabric-26.1.2:0.28.8') { transitive = false }
-    compileOnly('com.terraformersmc:modmenu:18.0.0') { transitive = false }
+    minecraft 'com.mojang:minecraft:26.3'
+    implementation 'net.fabricmc:fabric-loader:0.19.5'
+    implementation('fi.dy.masa.malilib:malilib-fabric-26.3:0.30.2') { transitive = false }
+    compileOnly('com.terraformersmc:modmenu:21.0.0') { transitive = false }
     compileOnly files(upstreamJars)
 }
 
@@ -93,7 +93,7 @@ def verifyDistribution = tasks.register('verifyDistribution') {
             ].each {
                 if (jar.getEntry(it) == null) throw new GradleException("Missing merged distribution entry: $it")
             }
-            if (jar.getEntry('META-INF/jars/tweakeroo-0.28.6+26.1.2.jar') != null) {
+            if (jar.getEntry('META-INF/jars/tweakeroo-0.30.1+26.3.jar') != null) {
                 throw new GradleException('Upstream mods must be merged, not nested')
             }
             def metadata = new groovy.json.JsonSlurper().parse(jar.getInputStream(jar.getEntry('fabric.mod.json')))

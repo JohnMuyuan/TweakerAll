@@ -1,7 +1,7 @@
 # TweakerAll
 
 ![License: LGPL-3.0-only](https://img.shields.io/badge/license-LGPL--3.0--only-blue)
-![Minecraft: 26.1.2](https://img.shields.io/badge/minecraft-26.1.2-green)
+![Minecraft: 26.3](https://img.shields.io/badge/minecraft-26.3-green)
 ![Loader: Fabric](https://img.shields.io/badge/loader-Fabric-yellow)
 
 > **TweakerAll is free and open source (LGPL-3.0-only), forever.**
@@ -30,8 +30,8 @@ It is not affiliated with, nor does it depend on, any other mods or teams.
 
 ## Installation
 
-1. Install **Fabric Loader 0.19.3+** for Minecraft **26.1.2**;
-2. Install the dependencies: **MaLiLib 0.28.8+ (below 0.29.0)** and **Fabric API**;
+1. Install **Fabric Loader 0.19.5+** for Minecraft **26.3**;
+2. Install the dependencies: **MaLiLib 0.30.2+ (below 0.31.0)** and **Fabric API**;
 3. Drop `tweakerall-fabric-*.jar` from [Releases](https://github.com/JohnMuyuan/TweakerAll/releases) into your `mods/` folder;
 4. Do **NOT** also install Tweakeroo, TweakerMore or Eclipse's Tweakeroo Additions — their functionality is already fully included in this mod, and co-installation is blocked by the mod's metadata (`breaks` entries) to prevent crashes.
 

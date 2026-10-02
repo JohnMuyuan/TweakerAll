@@ -1,7 +1,7 @@
 # TweakerAll
 
 ![License: LGPL-3.0-only](https://img.shields.io/badge/license-LGPL--3.0--only-blue)
-![Minecraft: 26.1.2](https://img.shields.io/badge/minecraft-26.1.2-green)
+![Minecraft: 26.3](https://img.shields.io/badge/minecraft-26.3-green)
 ![Loader: Fabric](https://img.shields.io/badge/loader-Fabric-yellow)
 
 > **本模组永久免费、开源（LGPL-3.0-only）。任何人向你出售本模组都是诈骗，请立刻举报。**
@@ -31,8 +31,8 @@ TweakerAll 是一个**独立的** Minecraft 客户端功能整合模组（Fabric
 
 ## 安装
 
-1. 安装 Minecraft **26.1.2** 的 **Fabric Loader 0.19.3+**；
-2. 安装依赖：**MaLiLib 0.28.8+（低于 0.29.0）** 和 **Fabric API**；
+1. 安装 Minecraft **26.3** 的 **Fabric Loader 0.19.5+**；
+2. 安装依赖：**MaLiLib 0.30.2+（低于 0.31.0）** 和 **Fabric API**；
 3. 把从 [Releases](https://github.com/JohnMuyuan/TweakerAll/releases) 下载的 `tweakerall-fabric-*.jar` 放进 `mods/` 文件夹；
 4. **不要**同时安装 Tweakeroo、TweakerMore 或 Eclipse's Tweakeroo Additions——相关功能已完整包含在本模组内，同时安装会被启动器直接拦截（模组元数据中已声明冲突）。
 

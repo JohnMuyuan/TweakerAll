@@ -33,7 +33,7 @@ public final class TweakerAllClient implements ClientModInitializer {
 
     private static boolean open() {
         Minecraft minecraft = Minecraft.getInstance();
-        minecraft.setScreen(new TweakerAllConfigScreen(minecraft.screen));
+        minecraft.gui.setScreen(new TweakerAllConfigScreen(minecraft.gui.screen()));
         return true;
     }
 }
