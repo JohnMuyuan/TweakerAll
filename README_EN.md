@@ -6,9 +6,7 @@
 
 > **TweakerAll is free and open source (LGPL-3.0-only), forever.**
 > **Anyone selling this mod to you is scamming you — report them and never pay.**
-> Author homepage & contact: **YP.MK** (https://muyno.com)
 
-**中文版：[README.md](README.md)**
 
 ---
 
